@@ -1,13 +1,58 @@
-import { TrendingUp, GraduationCap, PenTool, ArrowRight } from "lucide-react";
+import { TrendingUp, GraduationCap, PenTool, ArrowRight, ExternalLink, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import passiveIncomePlaybook from "@/assets/books/passive-income-playbook.jpg";
+import listBuildersBlueprint from "@/assets/books/list-builders-blueprint.jpg";
+import affiliateMarketersPlaybook from "@/assets/books/affiliate-marketers-playbook.jpg";
+
+interface ResourceLink {
+  title: string;
+  url: string;
+  image?: string;
+}
+
+interface Service {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  features: string[];
+  resources?: ResourceLink[];
+  affiliateLink?: {
+    title: string;
+    description: string;
+    url: string;
+  };
+}
+
 const Services = () => {
-  const services = [
+  const services: Service[] = [
     {
       icon: TrendingUp,
       title: "Affiliate Marketing",
       description: "Learn how to earn commissions by promoting products you believe in. No inventory, no shipping—just share and earn.",
       features: ["Product selection guidance", "Marketing strategies", "Commission optimization"],
+      resources: [
+        {
+          title: "Passive Income Playbook",
+          url: "https://www.barnesandnoble.com/w/passive-income-playbook-larry-a-quintana/1148494927?ean=9798349609565",
+          image: passiveIncomePlaybook,
+        },
+        {
+          title: "The List Builder's Blueprint",
+          url: "https://www.barnesandnoble.com/w/the-list-builders-blueprint-larry-a-quintana/1148282662?ean=9798349543579",
+          image: listBuildersBlueprint,
+        },
+        {
+          title: "The Affiliate Marketer's Playbook",
+          url: "https://www.barnesandnoble.com/w/the-affiliate-marketers-playbook-larry-a-quintana/1148476002?ean=9798349603143",
+          image: affiliateMarketersPlaybook,
+        },
+      ],
+      affiliateLink: {
+        title: "DREAMS Business Resources",
+        description: "Your launchpad to success — where knowledge turns into action, and action turns into income. Follow the J.E.D.I. path to start earning right away.",
+        url: "https://dreamsresources.com/join/?refid=AA6498",
+      },
     },
     {
       icon: GraduationCap,
@@ -42,7 +87,7 @@ const Services = () => {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.title}
                 className="group bg-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 border border-border hover:border-primary/30"
@@ -69,6 +114,51 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+
+                {/* Book Resources */}
+                {service.resources && (
+                  <div className="mb-6">
+                    <h4 className="font-body text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                      Recommended Reading
+                    </h4>
+                    <div className="flex gap-3">
+                      {service.resources.map((resource) => (
+                        <a
+                          key={resource.title}
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/book flex-1"
+                          title={resource.title}
+                        >
+                          <img
+                            src={resource.image}
+                            alt={resource.title}
+                            className="w-full h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                          />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Affiliate Link */}
+                {service.affiliateLink && (
+                  <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <h4 className="font-display text-sm font-semibold text-foreground mb-1">
+                      🚀 {service.affiliateLink.title}
+                    </h4>
+                    <p className="font-body text-xs text-muted-foreground mb-3 leading-relaxed">
+                      {service.affiliateLink.description}
+                    </p>
+                    <Button variant="default" size="sm" asChild>
+                      <a href={service.affiliateLink.url} target="_blank" rel="noopener noreferrer">
+                        Join DREAMS
+                        <ExternalLink className="ml-1 w-3.5 h-3.5" />
+                      </a>
+                    </Button>
+                  </div>
+                )}
 
                 {/* CTA */}
                 <Button variant="ghost" className="p-0 h-auto font-semibold text-primary hover:text-accent group/btn">
