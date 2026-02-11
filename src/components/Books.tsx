@@ -2,6 +2,16 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import passiveIncomePlaybook from "@/assets/books/passive-income-playbook.jpg";
+import affiliateMarketersPlaybook from "@/assets/books/affiliate-marketers-playbook.jpg";
+import listBuildersBlueprint from "@/assets/books/list-builders-blueprint.jpg";
+import realmOfTheUnseen from "@/assets/books/realm-of-the-unseen.jpg";
+import christianNationDebate from "@/assets/books/christian-nation-debate.jpg";
+import fromHistoryToIncome from "@/assets/books/from-history-to-income.jpg";
+import knowledgeIsPower from "@/assets/books/knowledge-is-power.jpg";
+import nourishYourMind from "@/assets/books/nourish-your-mind.jpg";
+import theodicyInDialogue from "@/assets/books/theodicy-in-dialogue.jpg";
+
 interface Book {
   id: number;
   title: string;
@@ -15,23 +25,65 @@ const Books = () => {
   const books: Book[] = [
     {
       id: 1,
-      title: "In the Realm of the Unseen",
-      cover: "https://placehold.co/300x450/1a1a1a/dc2626?text=In+the+Realm+of+the+Unseen",
-      description: "Explore the mysteries that lie beyond the visible world in this captivating journey into the unseen.",
+      title: "Passive Income Playbook",
+      cover: passiveIncomePlaybook,
+      description: "Crafting compelling funnels to build sustainable passive income streams.",
       link: "https://www.barnesandnoble.com/s/larry%20quintana",
     },
     {
       id: 2,
       title: "The Affiliate Marketer's Playbook",
-      cover: "https://placehold.co/300x450/1a1a1a/dc2626?text=Affiliate+Marketer's+Playbook",
-      description: "Discover strategies for building an engaged audience with TikTok, Instagram, and Facebook. Master the art of authentic content creation and driving sales.",
+      cover: affiliateMarketersPlaybook,
+      description: "Building an engaged audience with TikTok, Instagram, and Facebook.",
       link: "https://www.barnesandnoble.com/s/larry%20quintana",
     },
     {
       id: 3,
       title: "The List Builder's Blueprint",
-      cover: "https://placehold.co/300x450/1a1a1a/dc2626?text=List+Builder's+Blueprint",
-      description: "Your essential guide to building a responsive mailing list and turning subscribers into loyal customers.",
+      cover: listBuildersBlueprint,
+      description: "Grow your affiliate empire with traffic exchanges and organic strategies.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 4,
+      title: "In the Realm of the Unseen",
+      cover: realmOfTheUnseen,
+      description: "Lessons from the early church — exploring faith and the mysteries beyond the visible world.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 5,
+      title: "The Christian Nation Debate",
+      cover: christianNationDebate,
+      description: "Founding fathers and the role of faith in governance.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 6,
+      title: "From History to Income",
+      cover: fromHistoryToIncome,
+      description: "Leveraging affiliate marketing in the digital age.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 7,
+      title: "Knowledge is Power",
+      cover: knowledgeIsPower,
+      description: "Empowering citizens in the face of authority.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 8,
+      title: "Nourish Your Mind",
+      cover: nourishYourMind,
+      description: "Holistic wellness for students and young professionals.",
+      link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 9,
+      title: "Theodicy in Dialogue",
+      cover: theodicyInDialogue,
+      description: "Eastern Orthodoxy, Catholicism, and Protestant insights on the problem of evil.",
       link: "https://www.barnesandnoble.com/s/larry%20quintana",
     },
   ];
