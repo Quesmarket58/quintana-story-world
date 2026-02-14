@@ -45,10 +45,6 @@ const Hero = () => {
                 <ArrowRight className="ml-2" size={20} />
               </a>
             </Button>
-            <Button variant="heroOutline" size="lg" className="w-full sm:w-auto">
-              <Play className="mr-2" size={18} />
-              Watch How It Works
-            </Button>
           </div>
 
           {/* Trust Indicator */}
