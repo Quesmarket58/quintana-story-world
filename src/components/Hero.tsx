@@ -39,9 +39,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="lg" className="w-full sm:w-auto">
-              Get Free Training
-              <ArrowRight className="ml-2" size={20} />
+            <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
+              <a href="https://www.quesconstitutioncourse.store/" target="_blank" rel="noopener noreferrer">
+                Ques US Constitution Course
+                <ArrowRight className="ml-2" size={20} />
+              </a>
             </Button>
             <Button variant="heroOutline" size="lg" className="w-full sm:w-auto">
               <Play className="mr-2" size={18} />
