@@ -65,6 +65,20 @@ const Services = () => {
       title: "Content Creation",
       description: "Build your authority and attract customers through valuable content. We show you exactly how.",
       features: ["Content templates", "Social media strategies", "Email marketing basics"],
+      resources: [
+        {
+          title: "Vidatia — AI-powered video creation in any niche, genre, or style with just a few clicks.",
+          url: "https://jvz1.com/c/3367123/420441",
+        },
+        {
+          title: "Vidko — Tap into AI video generation and build a lucrative video service business.",
+          url: "https://jvz5.com/c/3367123/416486",
+        },
+        {
+          title: "Clickly — Start your own thumbnail and video editing service, everything included.",
+          url: "https://jvz5.com/c/3367123/433065",
+        },
+      ],
     },
   ];
 
@@ -115,30 +129,48 @@ const Services = () => {
                   ))}
                 </ul>
 
-                {/* Book Resources */}
+                {/* Resources */}
                 {service.resources && (
                   <div className="mb-6">
                     <h4 className="font-body text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                      Recommended Reading
+                      {service.resources[0]?.image ? "Recommended Reading" : "Recommended Tools"}
                     </h4>
-                    <div className="flex gap-3">
-                      {service.resources.map((resource) => (
-                        <a
-                          key={resource.title}
-                          href={resource.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group/book flex-1"
-                          title={resource.title}
-                        >
-                          <img
-                            src={resource.image}
-                            alt={resource.title}
-                            className="w-full h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                          />
-                        </a>
-                      ))}
-                    </div>
+                    {service.resources[0]?.image ? (
+                      <div className="flex gap-3">
+                        {service.resources.map((resource) => (
+                          <a
+                            key={resource.title}
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/book flex-1"
+                            title={resource.title}
+                          >
+                            <img
+                              src={resource.image}
+                              alt={resource.title}
+                              className="w-full h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                            />
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <ul className="space-y-2">
+                        {service.resources.map((resource) => (
+                          <li key={resource.title}>
+                            <a
+                              href={resource.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-start gap-2 font-body text-sm text-primary hover:text-accent transition-colors duration-200"
+                            >
+                              <ExternalLink className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                              <span>{resource.title}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 )}
 
