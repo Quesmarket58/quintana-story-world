@@ -59,6 +59,12 @@ const Services = () => {
       title: "Online Business Training",
       description: "Beginner-friendly, step-by-step training designed for people starting from zero. Learn at your own pace.",
       features: ["Video tutorials", "Live Q&A sessions", "Actionable worksheets"],
+      resources: [
+        {
+          title: "Worldprofit AI Suite — 7 Powerful Tools in One: Create, design, write, and sell faster than ever with Worldprofit's complete AI-powered business suite.",
+          url: "https://aisuite.worldprofit.ai/?id=6347762",
+        },
+      ],
     },
     {
       icon: PenTool,
