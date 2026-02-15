@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Heart, Instagram } from "lucide-react";
 import quesBadge from "@/assets/ques-badge.png";
 
 const Footer = () => {
@@ -46,6 +46,21 @@ const Footer = () => {
                 </a>
               ))}
             </nav>
+
+            {/* Social & Contact */}
+            <div className="flex items-center gap-4 mt-6 md:mt-0">
+              <a href="https://www.tiktok.com/@quenn1151" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-navy-foreground/10 hover:bg-primary flex items-center justify-center text-navy-foreground hover:text-primary-foreground transition-all" aria-label="TikTok">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.16 15a6.34 6.34 0 0 0 6.33 6.33 6.34 6.34 0 0 0 6.34-6.33V8.75a8.18 8.18 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.18z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/quesmarket57" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-navy-foreground/10 hover:bg-primary flex items-center justify-center text-navy-foreground hover:text-primary-foreground transition-all" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="mailto:Quesmarketingagency@gmail.com" className="font-body text-sm text-navy-foreground/70 hover:text-primary transition-colors">
+                Quesmarketingagency@gmail.com
+              </a>
+            </div>
           </div>
 
           {/* Bottom Bar */}

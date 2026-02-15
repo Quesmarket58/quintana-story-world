@@ -32,8 +32,9 @@ const About = () => {
               About Ques Marketing Agency LLC
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
-              We help people with no income, no career, or no experience learn how to build 
-              online businesses through affiliate marketing and digital education.
+              We provide various income and online business opportunities, courses, guidance, and advice 
+              for those with no income, no career, or no experience — including retirees and anyone 
+              seeking to start their own business. Serving the United States, Canada, Mexico, and European nations.
             </p>
           </div>
 
@@ -45,8 +46,9 @@ const About = () => {
               </h3>
               <p className="font-body text-lg text-muted-foreground leading-relaxed">
                 To provide real guidance and simple systems anyone can follow. 
-                We believe that financial freedom should be accessible to everyone, 
-                not just those with technical skills or business experience.
+                We believe that financial freedom should be accessible to everyone — 
+                whether you're unemployed, retired, or simply looking for a fresh start. 
+                No technical skills or business experience required.
               </p>
               <div className="mt-8 pt-8 border-t border-border">
                 <blockquote className="font-display text-xl md:text-2xl font-medium text-gradient italic">

@@ -33,8 +33,8 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="font-body text-lg md:text-xl text-navy-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Helping beginners and retirees build online income through simple, 
-            proven systems. No experience needed.
+            Providing income opportunities, courses, and guidance for beginners, retirees, 
+            and anyone ready to start their own online business. No experience needed.
           </p>
 
           {/* CTA Buttons */}
