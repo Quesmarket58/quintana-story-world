@@ -47,6 +47,10 @@ const Services = () => {
           url: "https://www.barnesandnoble.com/w/the-affiliate-marketers-playbook-larry-a-quintana/1148476002?ean=9798349603143",
           image: affiliateMarketersPlaybook,
         },
+        {
+          title: "4 Aces Mailer — Everything an Internet Marketer needs in a Viral Safelist Mailer Site. Get an instant audience to your website or business opportunity.",
+          url: "https://4acesmailer.com/index.php?referid=Quesmarket57",
+        },
       ],
       affiliateLink: {
         title: "DREAMS Business Resources",
@@ -139,11 +143,12 @@ const Services = () => {
                 {service.resources && (
                   <div className="mb-6">
                     <h4 className="font-body text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                      {service.resources[0]?.image ? "Recommended Reading" : "Recommended Tools"}
+                      {service.resources.some(r => r.image) ? "Recommended Resources" : "Recommended Tools"}
                     </h4>
-                    {service.resources[0]?.image ? (
-                      <div className="flex gap-3">
-                        {service.resources.map((resource) => (
+                    {/* Book resources with images */}
+                    {service.resources.some(r => r.image) && (
+                      <div className="flex gap-3 mb-3">
+                        {service.resources.filter(r => r.image).map((resource) => (
                           <a
                             key={resource.title}
                             href={resource.url}
@@ -160,9 +165,11 @@ const Services = () => {
                           </a>
                         ))}
                       </div>
-                    ) : (
+                    )}
+                    {/* Text-only resources */}
+                    {service.resources.some(r => !r.image) && (
                       <ul className="space-y-2">
-                        {service.resources.map((resource) => (
+                        {service.resources.filter(r => !r.image).map((resource) => (
                           <li key={resource.title}>
                             <a
                               href={resource.url}
