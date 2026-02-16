@@ -17,6 +17,7 @@ interface Service {
   description: string;
   features: string[];
   resources?: ResourceLink[];
+  embedUrl?: string;
   affiliateLink?: {
     title: string;
     description: string;
@@ -69,6 +70,7 @@ const Services = () => {
           url: "https://aisuite.worldprofit.ai/?id=6347762",
         },
       ],
+      embedUrl: "https://www.freewebsubmission.com/fws-remote-submit.php",
     },
     {
       icon: PenTool,
@@ -184,6 +186,24 @@ const Services = () => {
                         ))}
                       </ul>
                     )}
+                  </div>
+                )}
+
+                {/* Embedded Form */}
+                {service.embedUrl && (
+                  <div className="mb-6">
+                    <h4 className="font-body text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                      Free Web Submission
+                    </h4>
+                    <iframe
+                      width="100%"
+                      height="186"
+                      frameBorder={0}
+                      scrolling="no"
+                      src={service.embedUrl}
+                      title="Free Web Submission"
+                      className="rounded-lg border border-border"
+                    />
                   </div>
                 )}
 
