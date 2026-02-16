@@ -94,6 +94,10 @@ const Services = () => {
           title: "Clickly — Start your own thumbnail and video editing service, everything included.",
           url: "https://jvz5.com/c/3367123/433065",
         },
+        {
+          title: "Mateo Scary Que (YouTube) — A series of short horror and scary stories, written and presented for your entertainment: for those who like things that freak the mind out.",
+          url: "https://www.youtube.com/@Mateo-scary-que",
+        },
       ],
     },
   ];
