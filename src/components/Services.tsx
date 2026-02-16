@@ -11,6 +11,7 @@ interface ResourceLink {
   title: string;
   url: string;
   image?: string;
+  standalone?: boolean;
 }
 
 interface Service {
@@ -58,6 +59,7 @@ const Services = () => {
           title: "iHub Global — Entrepreneur opportunity promoting three platforms: RevHub, Reach Revolutionizing Solar (in favor of homeowners), and CorsAir (from plastic waste to bio-oil).",
           url: "https://app.ihub.global/signup/quesmarket57",
           image: ihubGlobal,
+          standalone: true,
         },
       ],
       affiliateLink: {
@@ -160,9 +162,9 @@ const Services = () => {
                       {service.resources.some(r => r.image) ? "Recommended Resources" : "Recommended Tools"}
                     </h4>
                     {/* Book resources with images */}
-                    {service.resources.some(r => r.image) && (
+                    {service.resources.some(r => r.image && !r.standalone) && (
                       <div className="flex gap-3 mb-3">
-                        {service.resources.filter(r => r.image).map((resource) => (
+                        {service.resources.filter(r => r.image && !r.standalone).map((resource) => (
                           <a
                             key={resource.title}
                             href={resource.url}
@@ -236,6 +238,26 @@ const Services = () => {
                     </Button>
                   </div>
                 )}
+
+                {/* Standalone image resources */}
+                {service.resources?.filter(r => r.standalone && r.image).map((resource) => (
+                  <div key={resource.title} className="mb-6">
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                      title={resource.title}
+                    >
+                      <img
+                        src={resource.image}
+                        alt={resource.title}
+                        className="w-32 h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                      />
+                      <p className="font-body text-xs text-muted-foreground mt-2 leading-relaxed">{resource.title}</p>
+                    </a>
+                  </div>
+                ))}
 
                 {/* CTA */}
                 <Button variant="ghost" className="p-0 h-auto font-semibold text-primary hover:text-accent group/btn">
