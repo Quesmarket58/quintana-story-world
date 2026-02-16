@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import passiveIncomePlaybook from "@/assets/books/passive-income-playbook.jpg";
 import listBuildersBlueprint from "@/assets/books/list-builders-blueprint.jpg";
 import affiliateMarketersPlaybook from "@/assets/books/affiliate-marketers-playbook.jpg";
+import mateoScaryQue from "@/assets/mateo-scary-que.png";
 
 interface ResourceLink {
   title: string;
@@ -97,6 +98,7 @@ const Services = () => {
         {
           title: "Mateo Scary Que (YouTube) — A series of short horror and scary stories, written and presented for your entertainment: for those who like things that freak the mind out.",
           url: "https://www.youtube.com/@Mateo-scary-que",
+          image: mateoScaryQue,
         },
       ],
     },
