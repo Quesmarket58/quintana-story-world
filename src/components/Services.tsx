@@ -6,6 +6,7 @@ import listBuildersBlueprint from "@/assets/books/list-builders-blueprint.jpg";
 import affiliateMarketersPlaybook from "@/assets/books/affiliate-marketers-playbook.jpg";
 import mateoScaryQue from "@/assets/mateo-scary-que.png";
 import ihubGlobal from "@/assets/ihub-global.png";
+import powerAdvertsPro from "@/assets/poweradverts-pro.gif";
 
 interface ResourceLink {
   title: string;
@@ -59,6 +60,12 @@ const Services = () => {
           title: "iHub Global — Entrepreneur opportunity promoting three platforms: RevHub, Reach Revolutionizing Solar (in favor of homeowners), and CorsAir (from plastic waste to bio-oil).",
           url: "https://app.ihub.global/signup/quesmarket57",
           image: ihubGlobal,
+          standalone: true,
+        },
+        {
+          title: "PowerAdverts Pro — Spin the wheel and win advertising credits to promote your business.",
+          url: "https://www.poweradvertspro.com/index.php?r=Quesmarket57",
+          image: powerAdvertsPro,
           standalone: true,
         },
       ],
