@@ -1,4 +1,5 @@
 import { Target, Heart, Users } from "lucide-react";
+import quesLogoBg from "@/assets/ques-logo-bg.png";
 
 const About = () => {
   const values = [
@@ -20,8 +21,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="about" className="relative py-20 md:py-32 bg-background overflow-hidden">
+      {/* Background Logo */}
+      <div
+        className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-[0.07] pointer-events-none"
+        style={{ backgroundImage: `url(${quesLogoBg})` }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
