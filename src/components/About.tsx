@@ -24,7 +24,7 @@ const About = () => {
     <section id="about" className="relative py-20 md:py-32 bg-background overflow-hidden">
       {/* Background Logo */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-[0.07] pointer-events-none"
+        className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-50 pointer-events-none"
         style={{ backgroundImage: `url(${quesLogoBg})` }}
       />
       <div className="container mx-auto px-4 relative z-10">
