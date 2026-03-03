@@ -54,8 +54,8 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
               >
-                <img src={quesFlag} alt="Ques Marketing" className="w-20 h-20 rounded object-cover" />
-                <span className="font-body text-xs text-navy-foreground font-medium">My LinkedIn</span>
+                <img src={quesFlag} alt="Ques Marketing" className="w-28 h-28 rounded-md object-cover shadow-md" />
+                <span className="font-body text-sm text-navy-foreground font-semibold">My LinkedIn</span>
               </a>
             </div>
           </nav>
