@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
+import quesFlag from "@/assets/ques-flag.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,9 +44,20 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Get Started
-            </Button>
+            <div className="flex flex-col items-center gap-1">
+              <Button variant="hero" size="sm">
+                Get Started
+              </Button>
+              <a
+                href="https://www.linkedin.com/in/larry-quintana-b327793a2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
+              >
+                <img src={quesFlag} alt="Ques Marketing" className="w-10 h-10 rounded object-cover" />
+                <span className="font-body text-[10px] text-navy-foreground font-medium">My LinkedIn</span>
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
