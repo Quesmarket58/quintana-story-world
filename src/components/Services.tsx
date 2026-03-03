@@ -7,6 +7,7 @@ import affiliateMarketersPlaybook from "@/assets/books/affiliate-marketers-playb
 import mateoScaryQue from "@/assets/mateo-scary-que.png";
 import ihubGlobal from "@/assets/ihub-global.png";
 import powerAdvertsPro from "@/assets/poweradverts-pro.gif";
+import smartConnectBiz from "@/assets/smart-connect-biz.png";
 
 interface ResourceLink {
   title: string;
@@ -51,6 +52,12 @@ const Services = () => {
           title: "The Affiliate Marketer's Playbook",
           url: "https://www.barnesandnoble.com/w/the-affiliate-marketers-playbook-larry-a-quintana/1148476002?ean=9798349603143",
           image: affiliateMarketersPlaybook,
+        },
+        {
+          title: "Smart Connect Biz — This Entrepreneur offer has 7 different offers in one platform. Just join up by clicking the icon. No closing sales involved. Let my team deal with that — all you do is promote and talk about what you offer. Full training and weekly Zoom training included.",
+          url: "https://smartconnectbiz.com/Quersmarketing",
+          image: smartConnectBiz,
+          standalone: true,
         },
         {
           title: "4 Aces Mailer — Everything an Internet Marketer needs in a Viral Safelist Mailer Site. Get an instant audience to your website or business opportunity.",
@@ -189,6 +196,25 @@ const Services = () => {
                         ))}
                       </div>
                     )}
+                    {/* Standalone image resources */}
+                    {service.resources?.filter(r => r.standalone && r.image).map((resource) => (
+                      <div key={resource.title} className="mb-3">
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block"
+                          title={resource.title}
+                        >
+                          <img
+                            src={resource.image}
+                            alt={resource.title}
+                            className="w-32 h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                          />
+                          <p className="font-body text-xs text-muted-foreground mt-2 leading-relaxed">{resource.title}</p>
+                        </a>
+                      </div>
+                    ))}
                     {/* Text-only resources */}
                     {service.resources.some(r => !r.image) && (
                       <ul className="space-y-2">
@@ -245,26 +271,6 @@ const Services = () => {
                     </Button>
                   </div>
                 )}
-
-                {/* Standalone image resources */}
-                {service.resources?.filter(r => r.standalone && r.image).map((resource) => (
-                  <div key={resource.title} className="mb-6">
-                    <a
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                      title={resource.title}
-                    >
-                      <img
-                        src={resource.image}
-                        alt={resource.title}
-                        className="w-32 h-auto rounded-md shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                      />
-                      <p className="font-body text-xs text-muted-foreground mt-2 leading-relaxed">{resource.title}</p>
-                    </a>
-                  </div>
-                ))}
 
                 {/* CTA */}
                 <Button variant="ghost" className="p-0 h-auto font-semibold text-primary hover:text-accent group/btn">
