@@ -9,6 +9,7 @@ import ihubGlobal from "@/assets/ihub-global.png";
 import powerAdvertsPro from "@/assets/poweradverts-pro.gif";
 import smartConnectBiz from "@/assets/smart-connect-biz.png";
 import imimic from "@/assets/imimic.png";
+import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
 
 interface ResourceLink {
   title: string;
@@ -35,7 +36,7 @@ const Services = () => {
   const services: Service[] = [
     {
       icon: TrendingUp,
-      title: "Affiliate Marketing",
+      title: "Entrepreneur and Business Opportunities",
       description: "Learn how to earn commissions by promoting products you believe in. No inventory, no shipping—just share and earn.",
       features: ["Product selection guidance", "Marketing strategies", "Commission optimization"],
       resources: [
@@ -74,6 +75,12 @@ const Services = () => {
           title: "PowerAdverts Pro — Spin the wheel and win advertising credits to promote your business.",
           url: "https://www.poweradvertspro.com/index.php?r=Quesmarket57",
           image: powerAdvertsPro,
+          standalone: true,
+        },
+        {
+          title: "Smart Connect AI Solutions — A 24/7 System That Grows Your Business. Stop losing leads • Answer calls, texts, and DMs instantly • Follow up until the lead is ready.",
+          url: "https://smartconnectaisolutions.com/Quersmarketing",
+          image: smartConnectAi,
           standalone: true,
         },
       ],
