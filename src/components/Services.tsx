@@ -8,6 +8,7 @@ import mateoScaryQue from "@/assets/mateo-scary-que.png";
 import ihubGlobal from "@/assets/ihub-global.png";
 import powerAdvertsPro from "@/assets/poweradverts-pro.gif";
 import smartConnectBiz from "@/assets/smart-connect-biz.png";
+import imimic from "@/assets/imimic.png";
 
 interface ResourceLink {
   title: string;
@@ -112,6 +113,12 @@ const Services = () => {
         {
           title: "Clickly — Start your own thumbnail and video editing service, everything included.",
           url: "https://jvz5.com/c/3367123/433065",
+        },
+        {
+          title: "iMimic — Virtual Influencers Are Changing the World – Keep Up or You'll be Left Out! Virtual Influencers Are Money-makers & the Brands Are Investing — For The First Time, You Can Target Any Niche, No Matter Who You Are.",
+          url: "https://jvz1.com/c/3367123/433913",
+          image: imimic,
+          standalone: true,
         },
         {
           title: "Mateo Scary Que (YouTube) — A series of short horror and scary stories, written and presented for your entertainment: for those who like things that freak the mind out.",
