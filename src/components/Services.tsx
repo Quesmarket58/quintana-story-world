@@ -10,6 +10,7 @@ import powerAdvertsPro from "@/assets/poweradverts-pro.gif";
 import smartConnectBiz from "@/assets/smart-connect-biz.png";
 import imimic from "@/assets/imimic.png";
 import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
+import intellafuel from "@/assets/intellafuel.png";
 
 interface ResourceLink {
   title: string;
@@ -81,6 +82,12 @@ const Services = () => {
           title: "Smart Connect AI Solutions — A 24/7 System That Grows Your Business. Stop losing leads • Answer calls, texts, and DMs instantly • Follow up until the lead is ready.",
           url: "https://smartconnectaisolutions.com/Quersmarketing",
           image: smartConnectAi,
+          standalone: true,
+        },
+        {
+          title: "IntellaFuel — AI-Powered Marketing That Helps Businesses Get More Customers. Generate Leads • Automate follow-ups • Increase conversions. Uses AI to replace expensive agencies and complicated software. Click the image to find out more.",
+          url: "https://intellafuelbiz.com/Quersmarketing",
+          image: intellafuel,
           standalone: true,
         },
       ],
