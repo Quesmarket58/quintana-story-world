@@ -67,8 +67,7 @@ const Contact = () => {
                 Let's Start a Conversation
               </h2>
               <p className="font-body text-lg text-muted-foreground mb-8">
-                Have questions about getting started? Want to learn more about our programs? 
-                We'd love to hear from you.
+                To get my free book just send your name and email.
               </p>
 
                 <div className="space-y-6">
