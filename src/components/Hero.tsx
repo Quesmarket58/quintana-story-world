@@ -47,8 +47,14 @@ const Hero = () => {
             </Button>
           </div>
 
+          {/* Free Book CTA */}
+          <p className="font-body text-lg md:text-xl text-navy-foreground mt-8 animate-fade-up font-semibold" style={{ animationDelay: "0.35s" }}>
+            Scroll down to the very bottom and fill in your details to get your FREE copy of my book{" "}
+            <span className="text-gradient italic">"The Affiliate Marketer's Playbook"</span>
+          </p>
+
           {/* Trust Indicator */}
-          <p className="font-body text-sm text-navy-foreground/60 mt-10 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <p className="font-body text-sm text-navy-foreground/60 mt-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             Join hundreds of beginners who started their online business journey
           </p>
         </div>
