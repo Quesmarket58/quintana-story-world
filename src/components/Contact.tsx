@@ -2,7 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageSquare, Send, CheckCircle, Instagram } from "lucide-react";
+import { Mail, MessageSquare, Send, CheckCircle, Instagram, Download, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
+const EBOOK_URL = "https://dhzihccplpbdkkptcddv.supabase.co/storage/v1/object/public/ebooks/affiliate-marketers-playbook.epub";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,12 +15,34 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from("contact_submissions")
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        });
+
+      if (error) throw error;
       setIsSubmitted(true);
-      // Here you would integrate with your contact form service
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -41,8 +67,7 @@ const Contact = () => {
                 Let's Start a Conversation
               </h2>
               <p className="font-body text-lg text-muted-foreground mb-8">
-                Have questions about getting started? Want to learn more about our programs? 
-                We'd love to hear from you.
+                To get my free book just send your name and email.
               </p>
 
                 <div className="space-y-6">
@@ -141,22 +166,40 @@ const Contact = () => {
                       className="bg-background border-border focus:border-primary resize-none"
                     />
                   </div>
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Send Message
-                    <Send className="ml-2 w-5 h-5" />
+                  <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 w-5 h-5" />
+                      </>
+                    )}
                   </Button>
                 </form>
               ) : (
-                <div className="text-center py-12">
+                <div className="text-center py-8">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                    Message Sent!
+                    Thank You Fellow Entrepreneur!
                   </h3>
-                  <p className="font-body text-muted-foreground">
-                    Thank you for reaching out. We'll get back to you soon.
+                  <p className="font-body text-muted-foreground mb-2">
+                    Thank you from the team at Ques Marketing Agency LLC, as a valued member of the community I want to include my book "The Affiliate Marketer's Playbook." Feel free to browse the site and see the amazing business opportunities that I am actively promoting which are some of the greatest opportunities out here today.
                   </p>
+                  <p className="font-body text-muted-foreground mb-6">
+                    — Larry A. Quintana
+                  </p>
+                  <a href={EBOOK_URL} download="The-Affiliate-Marketers-Playbook.epub">
+                    <Button variant="hero" size="lg" className="w-full">
+                      <Download className="mr-2 w-5 h-5" />
+                      Download Your Free eBook
+                    </Button>
+                  </a>
                 </div>
               )}
             </div>
