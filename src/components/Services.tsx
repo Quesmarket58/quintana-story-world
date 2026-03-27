@@ -11,6 +11,7 @@ import smartConnectBiz from "@/assets/smart-connect-biz.png";
 import imimic from "@/assets/imimic.png";
 import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
 import intellafuel from "@/assets/intellafuel.png";
+import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 
 interface ResourceLink {
   title: string;
@@ -88,6 +89,12 @@ const Services = () => {
           title: "IntellaFuel — AI-Powered Marketing That Helps Businesses Get More Customers. Generate Leads • Automate follow-ups • Increase conversions. Uses AI to replace expensive agencies and complicated software. Click the image to find out more.",
           url: "https://intellafuelbiz.com/Quersmarketing",
           image: intellafuel,
+          standalone: true,
+        },
+        {
+          title: "Nsite Tech Studios Inc — Larry Quintana's personally recommended business solutions. Click the image to visit.",
+          url: "https://www.nsitetechnologystudios.com/larry-quintana",
+          image: nsiteTechStudios,
           standalone: true,
         },
       ],
