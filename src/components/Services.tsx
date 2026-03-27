@@ -11,6 +11,7 @@ import smartConnectBiz from "@/assets/smart-connect-biz.png";
 import imimic from "@/assets/imimic.png";
 import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
 import intellafuel from "@/assets/intellafuel.png";
+import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 
 interface ResourceLink {
   title: string;
