@@ -106,7 +106,7 @@ const Services = () => {
     },
     {
       icon: GraduationCap,
-      title: "Online Business Training",
+      title: "Traffic Exchanges and Lead Capture/Autoresponders",
       description: "Beginner-friendly, step-by-step training designed for people starting from zero. Learn at your own pace.",
       features: ["Video tutorials", "Live Q&A sessions", "Actionable worksheets"],
       resources: [
