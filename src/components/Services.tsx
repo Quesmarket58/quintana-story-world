@@ -115,6 +115,12 @@ const Services = () => {
           title: "Worldprofit AI Suite — 7 Powerful Tools in One: Create, design, write, and sell faster than ever with Worldprofit's complete AI-powered business suite.",
           url: "https://aisuite.worldprofit.ai/?id=6347762",
         },
+        {
+          title: "AI Matrix Spillover — Let AI build your downline and email list on complete autopilot.",
+          url: "https://quesmarket58.aimatrixspillover.com/",
+          image: aiMatrixSpillover,
+          standalone: true,
+        },
       ],
       embedUrl: "https://www.freewebsubmission.com/fws-remote-submit.php",
     },
