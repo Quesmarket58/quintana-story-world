@@ -13,6 +13,7 @@ import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
 import intellafuel from "@/assets/intellafuel.png";
 import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
+import proAdvertisingClub from "@/assets/proadvertising-club.png";
 
 interface ResourceLink {
   title: string;
@@ -124,6 +125,8 @@ const Services = () => {
         {
           title: "ProAdvertising Club — If you want to build a side income and advertise your business opportunities with an overall impressive platform, use ProAdvertising Club.",
           url: "http://www.proadvertisingclub.com/index.php?r=Quesmarket57",
+          image: proAdvertisingClub,
+          standalone: true,
         },
       ],
       embedUrl: "https://www.freewebsubmission.com/fws-remote-submit.php",
