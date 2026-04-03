@@ -13,6 +13,7 @@ import smartConnectAi from "@/assets/smart-connect-ai-solutions.png";
 import intellafuel from "@/assets/intellafuel.png";
 import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
+import proAdvertisingClub from "@/assets/proadvertising-club.png";
 
 interface ResourceLink {
   title: string;
