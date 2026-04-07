@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import quesFlag from "@/assets/ques-flag.png";
+import marquisBadge from "@/assets/marquis-whos-who.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,6 +58,7 @@ const Header = () => {
                 <img src={quesFlag} alt="Ques Marketing" className="w-28 h-28 rounded-md object-cover shadow-md" />
                 <span className="font-body text-sm text-navy-foreground font-semibold">My LinkedIn</span>
               </a>
+              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
             </div>
           </nav>
 
