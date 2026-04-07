@@ -60,10 +60,22 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Get Started
-            </Button>
-          </nav>
+            <div className="flex flex-col items-center gap-2">
+              <Button variant="hero" size="sm">
+                Get Started
+              </Button>
+              <div
+                className="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="medium"
+                data-theme="light"
+                data-type="VERTICAL"
+                data-vanity="larry-quintana-b327793a2"
+                data-version="v1"
+              >
+                <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
+              </div>
+            </div>
 
           {/* Mobile Menu Button */}
           <button
