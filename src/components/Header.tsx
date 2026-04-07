@@ -48,7 +48,6 @@ const Header = () => {
               <Button variant="hero" size="sm">
                 Get Started
               </Button>
-              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
               <div
                 className="badge-base LI-profile-badge"
                 data-locale="en_US"
@@ -60,6 +59,7 @@ const Header = () => {
               >
                 <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
               </div>
+              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-36 h-36 rounded-md object-contain" />
             </div>
           </nav>
 
