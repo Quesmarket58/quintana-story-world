@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import quesFlag from "@/assets/ques-flag.png";
+import marquisBadge from "@/assets/marquis-whos-who.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
