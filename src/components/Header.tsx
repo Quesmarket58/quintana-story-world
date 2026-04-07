@@ -76,6 +76,7 @@ const Header = () => {
                 <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
               </div>
             </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
