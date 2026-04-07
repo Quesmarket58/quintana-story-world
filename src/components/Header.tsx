@@ -19,19 +19,35 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-primary/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <img 
-              src={quesBadge} 
-              alt="Ques Marketing Agency" 
-              className="w-12 h-12 md:w-14 md:h-14 object-contain"
-            />
-            <div className="hidden sm:block">
-              <span className="font-display text-lg md:text-xl font-semibold text-navy-foreground">
-                Ques Marketing
-              </span>
+          {/* Logo + LinkedIn Badge */}
+          <div className="flex items-center gap-4">
+            <a href="#" className="flex items-center gap-3">
+              <img 
+                src={quesBadge} 
+                alt="Ques Marketing Agency" 
+                className="w-12 h-12 md:w-14 md:h-14 object-contain"
+              />
+              <div className="hidden sm:block">
+                <span className="font-display text-lg md:text-xl font-semibold text-navy-foreground">
+                  Ques Marketing
+                </span>
+              </div>
+            </a>
+            <div className="hidden md:flex flex-col items-center gap-1">
+              <div
+                className="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="small"
+                data-theme="dark"
+                data-type="VERTICAL"
+                data-vanity="larry-quintana-b327793a2"
+                data-version="v1"
+              >
+                <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
+              </div>
+              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
             </div>
-          </a>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -44,23 +60,9 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col items-center gap-2">
-              <Button variant="hero" size="sm">
-                Get Started
-              </Button>
-              <div
-                className="badge-base LI-profile-badge"
-                data-locale="en_US"
-                data-size="medium"
-                data-theme="dark"
-                data-type="VERTICAL"
-                data-vanity="larry-quintana-b327793a2"
-                data-version="v1"
-              >
-                <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
-              </div>
-              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-36 h-36 rounded-md object-contain" />
-            </div>
+            <Button variant="hero" size="sm">
+              Get Started
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
