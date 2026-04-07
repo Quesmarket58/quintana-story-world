@@ -58,6 +58,8 @@ const Header = () => {
                 <img src={quesFlag} alt="Ques Marketing" className="w-28 h-28 rounded-md object-cover shadow-md" />
                 <span className="font-body text-sm text-navy-foreground font-semibold">My LinkedIn</span>
               </a>
+              <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
+              </a>
             </div>
           </nav>
 
