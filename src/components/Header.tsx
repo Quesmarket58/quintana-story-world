@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
-import quesFlag from "@/assets/ques-flag.png";
 import marquisBadge from "@/assets/marquis-whos-who.png";
 
 const Header = () => {
@@ -45,20 +44,22 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-2">
               <Button variant="hero" size="sm">
                 Get Started
               </Button>
-              <a
-                href="https://www.linkedin.com/in/larry-quintana-b327793a2/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
-              >
-                <img src={quesFlag} alt="Ques Marketing" className="w-28 h-28 rounded-md object-cover shadow-md" />
-                <span className="font-body text-sm text-navy-foreground font-semibold">My LinkedIn</span>
-              </a>
               <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
+              <div
+                className="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="medium"
+                data-theme="dark"
+                data-type="VERTICAL"
+                data-vanity="larry-quintana-b327793a2"
+                data-version="v1"
+              >
+                <a className="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/larry-quintana-b327793a2?trk=profile-badge">Larry Quintana</a>
+              </div>
             </div>
           </nav>
 
