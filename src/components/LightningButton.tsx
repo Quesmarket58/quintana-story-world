@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { Download, Loader2, CheckCircle } from "lucide-react";
+
+const EBOOK_URL = "https://dhzihccplpbdkkptcddv.supabase.co/storage/v1/object/public/ebooks/affiliate-marketers-playbook.epub";
 
 interface LightningBolt {
   id: number;
@@ -24,6 +30,10 @@ const generateBoltPath = (side: "left" | "right"): string => {
 
 const LightningButton = () => {
   const [bolts, setBolts] = useState<LightningBolt[]>([]);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     let id = 0;
@@ -37,7 +47,6 @@ const LightningButton = () => {
       };
       setBolts((prev) => [...prev.slice(-5), newBolt]);
       
-      // Add a second bolt on the opposite side occasionally
       if (Math.random() > 0.5) {
         const otherSide = side === "left" ? "right" : "left";
         const secondBolt: LightningBolt = {
@@ -55,13 +64,40 @@ const LightningButton = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from("contact_submissions")
+        .insert({
+          name: "Ebook Request",
+          email: email,
+          message: "Free ebook download request from hero section",
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Success!",
+        description: "Your free ebook is ready to download!",
+      });
+    } catch {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="relative inline-flex items-center justify-center mt-6 animate-fade-up" style={{ animationDelay: "0.45s" }}>
+    <div className="relative inline-flex flex-col items-center justify-center mt-6 animate-fade-up" style={{ animationDelay: "0.45s" }}>
       {/* Lightning SVG Container */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -71,7 +107,6 @@ const LightningButton = () => {
       >
         {bolts.map((bolt) => (
           <g key={bolt.id}>
-            {/* Glow layer */}
             <path
               d={bolt.path}
               fill="none"
@@ -82,7 +117,6 @@ const LightningButton = () => {
               filter="url(#lightning-glow)"
               className="lightning-bolt"
             />
-            {/* Core bolt */}
             <path
               d={bolt.path}
               fill="none"
@@ -105,17 +139,57 @@ const LightningButton = () => {
         </defs>
       </svg>
 
-      {/* Button with pulsing glow */}
-      <button
-        onClick={scrollToContact}
-        className="relative z-10 px-8 py-4 rounded-xl font-display text-lg font-bold text-primary-foreground bg-warm-gradient shadow-glow hover:scale-105 transition-transform duration-300 cursor-pointer"
-        style={{
-          animation: "lightning-pulse 2s ease-in-out infinite",
-        }}
+      {/* Form or Success State */}
+      <div
+        className="relative z-10 rounded-xl bg-warm-gradient p-6 shadow-glow"
+        style={{ animation: "lightning-pulse 2s ease-in-out infinite" }}
       >
-        To get my free book, send your name and email
-        <span className="block font-body text-sm font-normal mt-1 opacity-90">↓ Scroll to the bottom to claim yours</span>
-      </button>
+        {!isSubmitted ? (
+          <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3">
+            <h3 className="font-display text-lg font-bold text-primary-foreground text-center">
+              🎁 Get Your FREE Ebook
+            </h3>
+            <p className="font-body text-sm text-primary-foreground/90 text-center max-w-sm">
+              Enter your email below to instantly download<br />
+              <strong>"The Affiliate Marketer's Playbook"</strong>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="h-12 bg-white/90 border-white/50 text-foreground placeholder:text-muted-foreground flex-1"
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="h-12 px-6 rounded-md font-body font-semibold text-sm bg-navy text-navy-foreground hover:bg-navy/90 transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-5 h-5 animate-spin mx-auto" />
+                ) : (
+                  "Get Free Ebook"
+                )}
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div className="flex flex-col items-center gap-3 text-primary-foreground">
+            <CheckCircle className="w-10 h-10" />
+            <h3 className="font-display text-lg font-bold text-center">Your Ebook is Ready!</h3>
+            <a
+              href={EBOOK_URL}
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-navy text-navy-foreground font-body font-semibold hover:bg-navy/90 transition-colors"
+            >
+              <Download className="w-5 h-5" />
+              Download Now
+            </a>
+          </div>
+        )}
+      </div>
 
       <style>{`
         .lightning-bolt {
