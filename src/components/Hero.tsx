@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-sunset.jpg";
+import LightningButton from "@/components/LightningButton";
 
 const Hero = () => {
   return (
@@ -47,16 +48,13 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Free Book CTA */}
-          <p className="font-body text-lg md:text-xl text-navy-foreground mt-8 animate-fade-up font-semibold" style={{ animationDelay: "0.35s" }}>
-            Scroll down to the very bottom and fill in your details to get your FREE copy of my book{" "}
-            <span className="text-gradient italic">"The Affiliate Marketer's Playbook"</span>
-          </p>
-
           {/* Trust Indicator */}
           <p className="font-body text-sm text-navy-foreground/60 mt-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             Join hundreds of beginners who started their online business journey
           </p>
+
+          {/* Lightning Animated Free Book CTA */}
+          <LightningButton />
         </div>
       </div>
 
