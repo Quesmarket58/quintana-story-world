@@ -13,6 +13,7 @@ const Header = () => {
     { href: "#books", label: "Books" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
+    { href: "/blog", label: "The Ques Report", isRoute: true },
   ];
 
   return (
