@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import marquisBadge from "@/assets/marquis-whos-who.png";
@@ -13,6 +14,7 @@ const Header = () => {
     { href: "#books", label: "Books" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
+    { href: "/blog", label: "The Ques Report", isRoute: true },
   ];
 
   return (
@@ -51,15 +53,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="font-body text-sm font-medium text-navy-foreground/80 hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="font-body text-sm font-medium text-navy-foreground/80 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-sm font-medium text-navy-foreground/80 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <div className="flex flex-col items-center gap-2">
               <Button variant="hero" size="sm">
                 Get Started
@@ -92,16 +104,27 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden py-4 border-t border-primary/10 animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-body text-base font-medium text-navy-foreground/80 hover:text-primary transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="font-body text-base font-medium text-navy-foreground/80 hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="font-body text-base font-medium text-navy-foreground/80 hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <Button variant="hero" className="mt-2">
                 Get Started
               </Button>
