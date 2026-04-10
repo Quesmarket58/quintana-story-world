@@ -55,5 +55,5 @@ export const blogPosts: BlogPost[] = [
           "If you are ready to explore the stories that history classes often missed, The Hidden History of America is a valuable addition to your reading list. Visit Ques Market today to get your copy and explore more trusted ebooks and educational offers curated by Larry and the Ques Market brand.",
       },
     ],
- In today's hyper-connected business landscape, successful entrepreneurs and marketers understand that meaningful connections drive growth. Traditional networking approaches are time-consuming, inefficient, and often yield inconsistent results. Enter AI Connect, the revolutionary AI networking tool transforming how professionals build relationships and grow their businesses. },
+ },
 ];
