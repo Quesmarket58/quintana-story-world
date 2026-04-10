@@ -5,15 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import quesReportBadge from "@/assets/ques_report_badge.jpg";
 
-const blogPosts = [
-  {
-    slug: "hidden-history-america",
-    title: "The Hidden History of America: Untold Stories That Shaped a Nation",
-    category: "American History",
-    excerpt:
-      "Beyond the standard narratives lies a deeper story filled with forgotten heroes, political scandals, and suppressed historical events that helped shape the nation.",
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   return (
