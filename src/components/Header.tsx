@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import marquisBadge from "@/assets/marquis-whos-who.png";
+import quesReportHeaderBadge from "@/assets/ques-report-header-badge.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo + LinkedIn Badge */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a href="#" className="flex items-center gap-3">
               <img 
                 src={quesBadge} 
@@ -35,6 +36,13 @@ const Header = () => {
                 </span>
               </div>
             </a>
+            <Link to="/blog" className="flex-shrink-0">
+              <img 
+                src={quesReportHeaderBadge} 
+                alt="The Ques Report" 
+                className="w-10 h-10 md:w-12 md:h-12 rounded-md object-contain hover:scale-105 transition-transform"
+              />
+            </Link>
             <div className="hidden md:flex flex-col items-center gap-1">
               <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
             </div>
