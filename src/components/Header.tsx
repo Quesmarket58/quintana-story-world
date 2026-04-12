@@ -21,31 +21,33 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-primary/10">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo + Badges */}
-          <div className="flex items-center gap-4">
-            <div className="flex flex-col items-center gap-1">
-              <a href="#" className="flex items-center gap-3">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex items-start gap-3">
+              <a href="#" className="flex-shrink-0">
                 <img 
                   src={quesBadge} 
                   alt="Ques Marketing Agency" 
                   className="w-12 h-12 md:w-14 md:h-14 object-contain"
                 />
-                <div className="hidden sm:block">
-                  <span className="font-display text-lg md:text-xl font-semibold text-navy-foreground">
+              </a>
+              <div className="flex flex-col items-start justify-center gap-2 md:gap-3 pt-1">
+                <a href="#" className="hidden sm:block">
+                  <span className="font-display text-lg md:text-xl font-semibold text-navy-foreground leading-none">
                     Ques Marketing
                   </span>
-                </div>
-              </a>
-              <Link to="/blog" className="flex-shrink-0">
-                <img 
-                  src={quesReportHeaderBadge} 
-                  alt="The Ques Report" 
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-md object-contain hover:scale-105 transition-transform"
-                />
-              </Link>
+                </a>
+                <Link to="/blog" className="block flex-shrink-0">
+                  <img 
+                    src={quesReportHeaderBadge} 
+                    alt="The Ques Report" 
+                    className="w-28 md:w-40 rounded-lg object-contain shadow-glow hover:scale-[1.02] transition-transform"
+                  />
+                </Link>
+              </div>
             </div>
-            <div className="hidden md:flex flex-col items-center gap-1">
+            <div className="hidden md:flex flex-col items-center justify-center">
               <img src={marquisBadge} alt="Marquis Who's Who 2025 Honored Listee" className="w-28 h-28 rounded-md object-contain" />
             </div>
           </div>
