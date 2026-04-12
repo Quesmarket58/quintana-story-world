@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import marquisBadge from "@/assets/marquis-whos-who.png";
+import quesReportHeaderBadge from "@/assets/ques-report-header-badge.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
