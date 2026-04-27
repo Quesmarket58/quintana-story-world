@@ -14,6 +14,7 @@ import intellafuel from "@/assets/intellafuel.png";
 import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
 import proAdvertisingClub from "@/assets/proadvertising-club.png";
+import galaxyAiEbook from "@/assets/galaxy-ai-ebook.png";
 
 interface ResourceLink {
   title: string;
