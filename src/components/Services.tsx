@@ -14,6 +14,7 @@ import intellafuel from "@/assets/intellafuel.png";
 import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
 import proAdvertisingClub from "@/assets/proadvertising-club.png";
+import galaxyAiEbook from "@/assets/galaxy-ai-ebook.png";
 
 interface ResourceLink {
   title: string;
@@ -159,6 +160,12 @@ const Services = () => {
           title: "Mateo Scary Que (YouTube) — A series of short horror and scary stories, written and presented for your entertainment: for those who like things that freak the mind out.",
           url: "https://www.youtube.com/@Mateo-scary-que",
           image: mateoScaryQue,
+        },
+        {
+          title: "Galaxy AI & Free Ebook Offer — Master AI Prompts and dominate the future. Get the free ebook by Larry A. Quintana that teaches you to craft prompts that unlock the full power of Galaxy AI's 5,933+ tools.",
+          url: "https://quesmarket58.github.io/ques-prompts/",
+          image: galaxyAiEbook,
+          standalone: true,
         },
       ],
     },
