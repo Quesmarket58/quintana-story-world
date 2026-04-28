@@ -11,6 +11,7 @@ import fromHistoryToIncome from "@/assets/books/from-history-to-income.jpg";
 import knowledgeIsPower from "@/assets/books/knowledge-is-power.jpg";
 import nourishYourMind from "@/assets/books/nourish-your-mind.jpg";
 import theodicyInDialogue from "@/assets/books/theodicy-in-dialogue.jpg";
+import masteringArtOfPrompts from "@/assets/books/mastering-art-of-prompts.png";
 
 interface Book {
   id: number;
@@ -85,6 +86,13 @@ const Books = () => {
       cover: theodicyInDialogue,
       description: "Eastern Orthodoxy, Catholicism, and Protestant insights on the problem of evil.",
       link: "https://www.barnesandnoble.com/s/larry%20quintana",
+    },
+    {
+      id: 10,
+      title: "Mastering the Art of Prompts: A Comprehensive Guide for Creators and Developers",
+      cover: masteringArtOfPrompts,
+      description: "A comprehensive guide for creators and developers to master AI prompt engineering.",
+      link: "https://www.barnesandnoble.com/w/mastering-the-art-of-prompts-larry-quintana/1149920694?ean=9798295810541",
     },
   ];
 
