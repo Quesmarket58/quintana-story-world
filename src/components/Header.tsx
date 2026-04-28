@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import quesBadge from "@/assets/ques-badge.png";
 import marquisBadge from "@/assets/marquis-whos-who.png";
@@ -8,6 +8,32 @@ import quesReportHeaderBadge from "@/assets/ques-report-header-badge.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleAnchorClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const id = hash.replace("#", "");
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", `#${id}`);
+    }
+  };
+
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [location]);
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -67,6 +93,7 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
                   className="font-body text-sm font-medium text-navy-foreground/80 hover:text-primary transition-colors"
                 >
                   {link.label}
@@ -120,7 +147,7 @@ const Header = () => {
                     key={link.href}
                     href={link.href}
                     className="font-body text-base font-medium text-navy-foreground/80 hover:text-primary transition-colors py-2"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => handleAnchorClick(e, link.href)}
                   >
                     {link.label}
                   </a>
