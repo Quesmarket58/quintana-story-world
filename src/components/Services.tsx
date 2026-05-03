@@ -15,6 +15,7 @@ import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
 import proAdvertisingClub from "@/assets/proadvertising-club.png";
 import galaxyAiEbook from "@/assets/galaxy-ai-ebook.png";
+import qsBannerBuilder from "@/assets/qs-banner-builder.png";
 
 interface ResourceLink {
   title: string;
@@ -98,6 +99,12 @@ const Services = () => {
           title: "Nsite Tech Studios Inc — Larry Quintana's personally recommended business solutions. Click the image to visit.",
           url: "https://www.nsitetechnologystudios.com/larry-quintana",
           image: nsiteTechStudios,
+          standalone: true,
+        },
+        {
+          title: "Q's Banner Builder — If you want to make custom banners to promote any offer you have, then you need to join this offer. You can also become an affiliate and build a passive income while bringing in leads to your offers at the same time. This is a no brainer and the potential is all in your hands.",
+          url: "https://quesmarket58.github.io/qs-banner-builder/",
+          image: qsBannerBuilder,
           standalone: true,
         },
       ],
