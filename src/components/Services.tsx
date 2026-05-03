@@ -15,6 +15,7 @@ import nsiteTechStudios from "@/assets/nsite-tech-studios.png";
 import aiMatrixSpillover from "@/assets/ai-matrix-spillover.png";
 import proAdvertisingClub from "@/assets/proadvertising-club.png";
 import galaxyAiEbook from "@/assets/galaxy-ai-ebook.png";
+import qsBannerBuilder from "@/assets/qs-banner-builder.png";
 
 interface ResourceLink {
   title: string;
